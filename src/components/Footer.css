@@ -1,0 +1,40 @@
+footer {
+	position: relative;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #94ab6f;
+	color: #ffffff;
+	margin: 0;
+}
+
+.footer-left,
+.footer-right {
+	flex: 0 1 auto;
+	text-align: left;
+}
+
+.footer-right {
+	text-align: right;
+}
+
+.footer-center {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.footer-center a img {
+	width: 40px;
+	height: 40px;
+}
+
+.footer-right a {
+	color: #ffffff;
+	text-decoration: none;
+	margin: 0 10px;
+}
