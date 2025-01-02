@@ -1,0 +1,186 @@
+th {
+	background-color: #94ab6f;
+}
+
+h2 {
+	color: black;
+	margin-bottom: 0.5rem;
+	font-size: 1rem;
+}
+
+.descpic {
+	font-weight: normal;
+	align-items: left;
+}
+
+.even-background {
+	background-color: #cbd4ba;
+}
+
+.odd-background {
+	background-color: #94ab6f;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td {
+	width: 12.5%;
+	height: auto;
+}
+
+.close-button {
+	background-color: #624f25;
+	border: none;
+	border-radius: 45px;
+	padding: 5px 5px;
+	min-width: 7rem;
+	cursor: pointer;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.imgplant-container {
+	position: relative;
+	width: 100px;
+}
+
+.imgplant {
+	width: 100%;
+	height: 100%;
+}
+
+.imgoverlay {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.6);
+	color: white;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.25s;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
+.imgplant-container:hover .imgoverlay {
+	opacity: 1;
+}
+
+.imgoverlay:hover > * {
+	transform: translateY(0);
+}
+
+.imgoverlay > * {
+	transform: translateY(20px);
+	transition: transform 0.25s;
+}
+
+.imgplant-column,
+.details-column,
+.images-column {
+	padding: 0;
+	text-align: center;
+}
+
+.picdetails {
+	min-height: 16rem;
+}
+
+.imgplantsized {
+	margin-left: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.images-column .colpic {
+	width: 25%;
+	max-width: 80px;
+	object-fit: cover;
+	margin-top: 15px;
+}
+
+.commonname {
+	font-weight: bold;
+	font-size: 1.3rem;
+	color: black;
+}
+.plantfamily {
+	font-size: 1rem;
+	color: black;
+	font-style: italic;
+}
+
+.latinname {
+	font-weight: normal;
+	font-size: 0.8rem;
+	text-align: center;
+	color: black;
+	font-style: italic;
+}
+
+.details-display {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.images-column {
+		width: 100%;
+		display: block;
+		margin-top: 15px;
+	}
+
+	.colpic {
+		width: 20px;
+		max-width: 60px;
+		margin-top: 60px;
+	}
+
+	.commonname,
+	.plantfamily,
+	.latinname {
+		font-size: 14px;
+	}
+
+	.main-display {
+		display: none;
+	}
+
+	.card-details .commonname {
+		margin-top: 0;
+	}
+
+	.imagegroup {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		margin-top: 3rem;
+		height: 1rem;
+		width: auto;
+		margin-bottom: 3rem;
+	}
+	.details-display {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		background-color: #94ab6f;
+	}
+
+	.details-display .imgplant {
+		margin-left: 5rem;
+	}
+	.details-display .card-details {
+		margin-right: 5rem;
+	}
+	.imagegroup {
+		margin-top: 0;
+	}
+
+	.main-display {
+		display: none;
+	}
+}

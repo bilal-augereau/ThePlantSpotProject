@@ -1,0 +1,16 @@
+.plant-htitles-desktop {
+	display: table-row;
+	font-weight: bold;
+	color: black;
+	border-top: solid 1px #cbd4ba;
+	padding: 100px;
+}
+.search {
+	background-color: #94ab6f;
+}
+
+@media (max-width: 768px) {
+	.plant-htitles-desktop {
+		display: none;
+	}
+}
