@@ -1,33 +1,51 @@
 # React + TypeScript + Vite
 
-Ce modèle fournit une configuration minimale pour faire fonctionner React dans Vite avec certaines règles Biome et package préinstallé.
+Welcome to ThePlantSpot, a web application that simplifies finding the perfect plants for your home or garden. Whether you're a plant enthusiast or a beginner, our platform matches you with plants that fit your lifestyle and preferences based on key parameters like watering needs, sunlight requirements, and more!
 
-Il est préconfiguré avec un ensemble d'outils pour aider les étudiants à produire du code de qualité industrielle, tout en restant un outil pédagogique :
+🌱 ThePlantSpot: Personalized Plant Catalog
+Welcome to Plantify, a web application that simplifies finding the perfect plants for your home or garden. Whether you're a plant enthusiast or a beginner, our platform matches you with plants that fit your lifestyle and preferences based on key parameters like watering needs, sunlight requirements, and more!
 
-- **Husky** : Vous permet d'exécuter des commandes spécifiques déclenchées par des événements _git_.
-- **Vite** : Alternative à _Create-React-App_, offrant une expérience plus fluide avec moins d'outils.
-- **Biome** : Alternative à _ESlint_ et _Prettier_, assurant la qualité du code selon les règles choisies.
+🚀 Features
 
-## Utilisateurs Windows
+🪴 Personalized Plant Recommendations
+Customize your plant catalog based on parameters like:
+Watering needs: Low, medium, or high.
+Light requirements: Direct sunlight, partial shade, or low light.
+Plant type: Indoor, outdoor, succulents, flowering plants, etc.
 
-Assurez-vous de lancer ces commandes dans un terminal Git pour éviter [les problèmes de formats de nouvelles lignes](https://en.wikipedia.org/wiki/Newline#Issues_with_different_newline_formats) :
+🔍 Search and Filters
+Quickly search for specific plants or filter based on your preferences.
+Explore detailed plant profiles with care instructions.
 
-```sh
+🌟 User-Friendly Interface
+Intuitive design tailored for plant lovers of all experience levels.
+
+🌿 How It Works
+Answer a Few Questions: Share your preferences for watering, light, and type of plants.
+Get Recommendations: Our algorithm suggests plants that meet your criteria.
+Explore Plant Details: View profiles, care tips, and photos of each recommended plant.
+
+------------------
+
+This template provides a minimal setup to run React in Vite with some pre-configured Biome rules and pre-installed packages.
+
+Husky: Allows you to execute specific commands triggered by git events.
+Vite: An alternative to Create-React-App, offering a smoother experience with fewer tools.
+Biome: An alternative to ESLint and Prettier, ensuring code quality according to selected rules.
+
+Windows Users
+Make sure to run these commands in a Git terminal to avoid newline format issues:
 git config --global core.eol lf
 git config --global core.autocrlf false
-```
 
-## Installation & Utilisation
+Installation & Usage
+Install the Biome plugin in VSCode and configure it.
+Clone this repository, then navigate to the cloned directory.
+Run the command npm install.
+Create an environment file (.env) at the root of the project folder: you can copy the .env.sample file as a template (do not delete it).
+Basic Commands
 
-1. Installez le plugin **Biome** dans VSCode et configurez-le.
-2. Clonez ce dépôt, puis accédez au répertoire cloné.
-3. Exécutez la commande `npm install`.
-4. Créez un fichier d'environnement (`.env`) à la racine du dossier projet : vous pouvez copier le fichier `.env.sample` comme modèle (**ne le supprimez pas**).
-
-## Commandes de Base
-
-| Commande               | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| `npm install`          | Installe les dépendances                   |
-| `npm run dev`          | Démarre le server en développement         |
-| `npm run check`        | Exécute les outils de validation (linting et formatage)                     |
+Command	Description
+npm install	Installs dependencies
+npm run dev	Starts the development server
+npm run check	Runs validation tools (linting and formatting)
