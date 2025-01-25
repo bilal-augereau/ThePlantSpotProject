@@ -1,5 +1,7 @@
 # React + TypeScript + Vite // URL: https://the-plant-spot-project.vercel.app/
 
+![Capture d'écran 2024-11-27 102843](https://github.com/user-attachments/assets/a4fb108d-1d48-48b6-9bb4-ecdcfde911ae)
+
 Welcome to ThePlantSpot, a web application that simplifies finding the perfect plants for your home or garden. Whether you're a plant enthusiast or a beginner, our platform matches you with plants that fit your lifestyle and preferences based on key parameters like watering needs, sunlight requirements, and more!
 
 🌱 ThePlantSpot: Personalized Plant Catalog
