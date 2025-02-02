@@ -410,37 +410,37 @@ const PlantList = ({ plant, index }: PlantListProps) => {
 					<p className="latinname">{plant["Latin name"]}</p>
 					<div className="imagegroup">
 						<img
-							src="src/img/picto/sun.png"
+							src={sunImg}
 							alt={plant["Light tolered"]}
 							title={plant["Light tolered"]}
 							className="colpic"
 						/>
 						<img
-							src="src/img/picto/drop.png"
+							src={dropImg}
 							alt={plant.Watering}
 							title={`${plant.Watering}`}
 							className="colpic"
 						/>
 						<img
-							src="src/img/picto/thermometer.png"
+							src={thermometerImg}
 							alt={`${plant["Temperature min"].C} & ${plant["Temperature max"].C}°C`}
 							title={`${plant["Temperature min"].C} & ${plant["Temperature max"].C}°C`}
 							className="colpic"
 						/>
 						<img
-							src="src/img/picto/hibiscus.png"
+							src={growthImg}
 							alt={plant.Growth}
 							title={`${plant.Growth}`}
 							className="colpic"
 						/>
 						<img
-							src="src/img/picto/pruning-shears.png"
+							src={pruningImg}
 							alt={plant.Pruning}
 							title={`${plant.Pruning}`}
 							className="colpic"
 						/>
 						<img
-							src="src/img/picto/difficulties.png"
+							src={difficultiesImg}
 							alt="Difficulty"
 							title={`${averageDifficulty}`}
 							className="colpic"
