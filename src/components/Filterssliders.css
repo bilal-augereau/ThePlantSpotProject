@@ -107,6 +107,8 @@ p {
 	.sliders-container {
 		grid-template-columns: 1fr;
 		padding: 0 1rem;
+		gap: 0rem;
+		margin-top: 0;
 	}
 	.reset-button {
 		grid-column: span 1;

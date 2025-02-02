@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./Quiz.css";
 import { useQuiz } from "../contexts/QuizContext";
+import { useNavigate } from "react-router-dom";
 
 const Quiz = () => {
+	const navigate = useNavigate();
 	const { setAnswers } = useQuiz();
 	const questions = [
 		{
@@ -73,6 +75,7 @@ const Quiz = () => {
 	const handleSubmit = () => {
 		setAnswers(userAnswers);
 		setIsSubmitted(true);
+		navigate("/Search");
 	};
 
 	const isAnswerSelected = userAnswers[currentQuestionIndex];

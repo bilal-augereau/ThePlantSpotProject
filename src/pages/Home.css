@@ -75,3 +75,31 @@ body {
 	margin: 50px auto;
 	border-radius: 2px;
 }
+
+@media only screen and (max-width: 1024px) {
+	.green-path {
+		display: none;
+	}
+	.find-spot {
+		width: auto;
+		font-size: 2.2rem;
+	}
+	.upper-body {
+		display: inline-block;
+	}
+
+	.woman-ia {
+		max-width: 19rem;
+		max-height: 19rem;
+		margin-top: 2rem;
+	}
+	.home-container {
+		flex-direction: column;
+		padding: 20px;
+	}
+	.first-paragraph p {
+		font-size: 1.5rem;
+		font-weight: lighter;
+		text-align: center;
+	}
+}

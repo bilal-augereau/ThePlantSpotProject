@@ -9,8 +9,9 @@ h2 {
 }
 
 .descpic {
-	font-weight: normal;
+	font-weight: bold;
 	align-items: left;
+	color: black;
 }
 
 .even-background {
@@ -70,6 +71,7 @@ td {
 
 .imgplant-container:hover .imgoverlay {
 	opacity: 1;
+	cursor: pointer;
 }
 
 .imgoverlay:hover > * {
@@ -171,10 +173,7 @@ td {
 	}
 
 	.details-display .imgplant {
-		margin-left: 5rem;
-	}
-	.details-display .card-details {
-		margin-right: 5rem;
+		margin-left: 1rem;
 	}
 	.imagegroup {
 		margin-top: 0;
@@ -182,5 +181,10 @@ td {
 
 	.main-display {
 		display: none;
+	}
+
+	.imgplant {
+		width: 90%;
+		height: 90%;
 	}
 }

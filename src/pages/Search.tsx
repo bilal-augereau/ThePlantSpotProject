@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import "../components/PlantList.css";
+
 import CircularProgress from "@mui/material/CircularProgress";
 import Stack from "@mui/material/Stack";
+
+import plantData from "../data/plants.json";
 import Filterssliders from "../components/Filterssliders.tsx";
 import PlantList from "../components/PlantList.tsx";
 import SearchBar from "../components/SearchBar.tsx";
+
+import "../components/PlantList.css";
 import "../components/SearchBar.css";
 import "./Search.css";
-import plantData from "../data/plants.json";
 
 export type Plant = {
 	id: number;
