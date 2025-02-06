@@ -35,6 +35,8 @@ const SearchBar = ({
 					placeholder="Search a plant..."
 					value={searchTerm}
 					onChange={handleChange}
+					onFocus={(e) => e.target.setAttribute("autocomplete", "off")}
+					onBlur={() => setTimeout(() => console.log("Input lost focus"), 100)}
 				/>
 			</div>
 			<button type="button" className="dropdown-button" onClick={toggleFilters}>
