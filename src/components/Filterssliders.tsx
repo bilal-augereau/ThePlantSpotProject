@@ -176,97 +176,98 @@ const Filterssliders = ({
 	};
 
 	return (
-		<div className="sliders-container">
-			<div className="slideritem">
-				<h3>Tolered Light</h3>
-				<input
-					type="range"
-					min="0"
-					max="3"
-					className={`slider ${interactedToleredlight ? "active" : "inactive"}`}
-					value={valueToleredlight}
-					onChange={(e) => {
-						setValueToleredlight(Number(e.target.value));
-						setInteractedToleredlight(true);
-					}}
-				/>
-				<p>
-					<strong>{choicesToleredlight[valueToleredlight]}</strong>
-				</p>
-			</div>
+		<div className="filters-container">
+			<div className="sliders-container">
+				<div className="slideritem">
+					<h3>Tolered Light</h3>
+					<input
+						type="range"
+						min="0"
+						max="3"
+						className={`slider ${interactedToleredlight ? "active" : "inactive"}`}
+						value={valueToleredlight}
+						onChange={(e) => {
+							setValueToleredlight(Number(e.target.value));
+							setInteractedToleredlight(true);
+						}}
+					/>
+					<p>
+						<strong>{choicesToleredlight[valueToleredlight]}</strong>
+					</p>
+				</div>
 
-			<div className="slideritem">
-				<h3>Watering</h3>
-				<input
-					type="range"
-					min="0"
-					max="3"
-					className={`slider ${interactedWatering ? "active" : "inactive"}`}
-					value={valueWatering}
-					onChange={(e) => {
-						setValueWatering(Number(e.target.value));
-						setInteractedWatering(true);
-					}}
-				/>
-				<p>
-					<strong>{choicesWatering[valueWatering]}</strong>
-				</p>
-			</div>
+				<div className="slideritem">
+					<h3>Watering</h3>
+					<input
+						type="range"
+						min="0"
+						max="3"
+						className={`slider ${interactedWatering ? "active" : "inactive"}`}
+						value={valueWatering}
+						onChange={(e) => {
+							setValueWatering(Number(e.target.value));
+							setInteractedWatering(true);
+						}}
+					/>
+					<p>
+						<strong>{choicesWatering[valueWatering]}</strong>
+					</p>
+				</div>
 
-			<div className="slideritem">
-				<h3>Temperature Range</h3>
-				<input
-					type="range"
-					min="0"
-					max="3"
-					className={`slider ${interactedTemperaturerange ? "active" : "inactive"}`}
-					value={valueTemperaturerange}
-					onChange={(e) => {
-						setValueTemperaturerange(Number(e.target.value));
-						setInteractedTemperaturerange(true);
-					}}
-				/>
-				<p>
-					<strong>{choicesTemperaturerange[valueTemperaturerange]}</strong>
-				</p>
-			</div>
+				<div className="slideritem">
+					<h3>Temperature Range</h3>
+					<input
+						type="range"
+						min="0"
+						max="3"
+						className={`slider ${interactedTemperaturerange ? "active" : "inactive"}`}
+						value={valueTemperaturerange}
+						onChange={(e) => {
+							setValueTemperaturerange(Number(e.target.value));
+							setInteractedTemperaturerange(true);
+						}}
+					/>
+					<p>
+						<strong>{choicesTemperaturerange[valueTemperaturerange]}</strong>
+					</p>
+				</div>
 
-			<div className="slideritem">
-				<h3>Growth</h3>
-				<input
-					type="range"
-					min="0"
-					max="3"
-					className={`slider ${interactedGrowth ? "active" : "inactive"}`}
-					value={valueGrowth}
-					onChange={(e) => {
-						setValueGrowth(Number(e.target.value));
-						setInteractedGrowth(true);
-					}}
-				/>
-				<p>
-					<strong>{choicesGrowth[valueGrowth]}</strong>
-				</p>
-			</div>
+				<div className="slideritem">
+					<h3>Growth</h3>
+					<input
+						type="range"
+						min="0"
+						max="3"
+						className={`slider ${interactedGrowth ? "active" : "inactive"}`}
+						value={valueGrowth}
+						onChange={(e) => {
+							setValueGrowth(Number(e.target.value));
+							setInteractedGrowth(true);
+						}}
+					/>
+					<p>
+						<strong>{choicesGrowth[valueGrowth]}</strong>
+					</p>
+				</div>
 
-			<div className="slideritem">
-				<h3>Pruning</h3>
-				<input
-					type="range"
-					min="0"
-					max="3"
-					className={`slider ${interactedPruning ? "active" : "inactive"}`}
-					value={valuePruning}
-					onChange={(e) => {
-						setValuePruning(Number(e.target.value));
-						setInteractedPruning(true);
-					}}
-				/>
-				<p>
-					<strong>{choicesPruning[valuePruning]}</strong>
-				</p>
+				<div className="slideritem">
+					<h3>Pruning</h3>
+					<input
+						type="range"
+						min="0"
+						max="3"
+						className={`slider ${interactedPruning ? "active" : "inactive"}`}
+						value={valuePruning}
+						onChange={(e) => {
+							setValuePruning(Number(e.target.value));
+							setInteractedPruning(true);
+						}}
+					/>
+					<p>
+						<strong>{choicesPruning[valuePruning]}</strong>
+					</p>
+				</div>
 			</div>
-
 			<button type="button" onClick={resetFilters} className="reset-button">
 				RESET
 			</button>

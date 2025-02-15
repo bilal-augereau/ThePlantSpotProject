@@ -163,25 +163,23 @@ const Search = () => {
 			</div>
 			<div>
 				<div className="plant-card">
-					<table>
-						<thead>
-							<tr className="plant-htitles-desktop">
-								<th>Plants</th>
-								<th>Common Name / Family / Latin Name</th>
-								<th>Light tolered</th>
-								<th>Watering</th>
-								<th>Temperature</th>
-								<th>Growth</th>
-								<th>Pruning</th>
-								<th>Global Difficulty</th>
-							</tr>
-						</thead>
-						<tbody>
-							{displayedPlants.map((plant, index) => (
-								<PlantList key={plant.id} plant={plant} index={index} />
-							))}
-						</tbody>
-					</table>
+					<div className="plant-headers">
+						<div className="plant-htitles-desktop">
+							<div>Plants</div>
+							<div>Common Name / Family / Latin Name</div>
+							<div>Light tolered</div>
+							<div>Watering</div>
+							<div>Temperature</div>
+							<div>Growth</div>
+							<div>Pruning</div>
+							<div>Global Difficulty</div>
+						</div>
+					</div>
+					<div className="plants-container">
+						{displayedPlants.map((plant, index) => (
+							<PlantList key={plant.id} plant={plant} index={index} />
+						))}
+					</div>
 				</div>
 			</div>
 		</div>
