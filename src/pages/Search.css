@@ -1,10 +1,32 @@
+.plant-card {
+	width: 100%;
+	display: grid;
+	gap: 2px;
+}
+
+.plant-headers {
+	margin-bottom: 10px;
+}
+
 .plant-htitles-desktop {
-	display: table-row;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	gap: 10px;
+	padding: 15px;
 	font-weight: bold;
 	color: black;
 	border-top: solid 1px #cbd4ba;
-	padding: 100px;
+	background-color: #94ab6f;
+	text-align: center;
 }
+
+.plants-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
 .search {
 	background-color: #94ab6f;
 }

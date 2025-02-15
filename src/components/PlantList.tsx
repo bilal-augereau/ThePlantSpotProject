@@ -1,5 +1,5 @@
 import "./PlantList.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import difficultiesImg from "../img/picto/difficulties.png";
 import difficultiesBWImg from "../img/picto/difficultiesBW.png";
 import dropImg from "../img/picto/drop.png";
@@ -209,20 +209,38 @@ const PlantList = ({ plant, index }: PlantListProps) => {
 	const handleCloseCard = () => {
 		setSelectedPlant(null);
 	};
+
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 768);
+			if (window.innerWidth <= 768) {
+				setSelectedPlant(plant); // Force `selectedPlant` en mobile
+			} else {
+				setSelectedPlant(null); // Réinitialise en desktop
+			}
+		};
+
+		window.addEventListener("resize", handleResize);
+		handleResize(); // Exécuter une fois au chargement
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, [plant]);
+
 	return (
 		<>
-			<tr
+			<div
 				className={`main-display ${index % 2 === 0 ? "even-background" : "odd-background"}`}
 				key={plant.id}
 			>
-				<td className="imgplant-column">
+				<div className="imgplant-column">
 					{selectedPlant && (
 						<div>
 							<img
 								className="imgplantsized"
 								src={plant.Img}
 								alt={plant.Family}
-								width="200"
 							/>
 							<button
 								className="close-button"
@@ -233,7 +251,7 @@ const PlantList = ({ plant, index }: PlantListProps) => {
 							</button>
 						</div>
 					)}
-					{!selectedPlant && (
+					{!isMobile && !selectedPlant && (
 						<div
 							className="imgplant-container"
 							onClick={() => handlePlantClick(plant)}
@@ -249,49 +267,53 @@ const PlantList = ({ plant, index }: PlantListProps) => {
 							</div>
 						</div>
 					)}
-				</td>
-				<td className="details-column">
-					<p className="commonname">{plant["Common name"]}</p>
+				</div>
+				<div className="details-column">
+					<h3 id="commonname">{plant["Common name"]}</h3>
 					<p className="plantfamily">{plant.Family}</p>
 					<p className="latinname">{plant["Latin name"]}</p>
-				</td>
+				</div>
 
 				{/* Groupes d'images */}
-				<td className="images-column">
+				<div className="images-column">
 					<div className="image-group">
-						{getLightImage(plant["Light tolered"])?.map((image, index) => (
-							<img
-								key={`Light tolered ${plant.id}-${index}`}
-								src={image}
-								alt={plant["Light tolered"]}
-								title={plant["Light tolered"]}
-								className="colpic"
-							/>
-						))}
+						<div className="picsdirection">
+							{getLightImage(plant["Light tolered"])?.map((image, index) => (
+								<img
+									key={`Light tolered ${plant.id}-${index}`}
+									src={image}
+									alt={plant["Light tolered"]}
+									title={plant["Light tolered"]}
+									className="colpic"
+								/>
+							))}
+						</div>
 						{selectedPlant && (
 							<div className="picdetails">
-								<h2>
+								<h2 id="titrecat">
 									Light Tolerance: <br />
 								</h2>
 								<p className="descpic">{plant["Light tolered"]}</p>
 							</div>
 						)}
 					</div>
-				</td>
-				<td className="images-column">
+				</div>
+				<div className="images-column">
 					<div className="image-group">
-						{getDropImage(plant.Watering)?.map((image, index) => (
-							<img
-								key={`Watering ${plant.id}-${index}`}
-								src={image}
-								alt={plant.Watering}
-								title={`${plant.Watering}`}
-								className="colpic"
-							/>
-						))}
+						<div className="picsdirection">
+							{getDropImage(plant.Watering)?.map((image, index) => (
+								<img
+									key={`Watering ${plant.id}-${index}`}
+									src={image}
+									alt={plant.Watering}
+									title={`${plant.Watering}`}
+									className="colpic"
+								/>
+							))}
+						</div>
 						{selectedPlant && (
 							<div className="picdetails">
-								<h2>
+								<h2 id="titrecat">
 									{" "}
 									Watering: <br />
 								</h2>
@@ -299,29 +321,31 @@ const PlantList = ({ plant, index }: PlantListProps) => {
 							</div>
 						)}
 					</div>
-				</td>
-				<td className="images-column">
+				</div>
+				<div className="images-column">
 					<div className="image-group">
-						{getTemperatureImage(
-							plant["Temperature min"].C,
-							plant["Temperature max"].C,
-						)?.map((image, index) => {
-							const range =
-								plant["Temperature max"].C - plant["Temperature min"].C;
-							return (
-								<img
-									key={`Temperature ${plant.id}-${index}`}
-									src={image}
-									alt="Temperature"
-									title={`${range}`}
-									className="colpic"
-									width="50"
-								/>
-							);
-						})}
+						<div className="picsdirection">
+							{getTemperatureImage(
+								plant["Temperature min"].C,
+								plant["Temperature max"].C,
+							)?.map((image, index) => {
+								const range =
+									plant["Temperature max"].C - plant["Temperature min"].C;
+								return (
+									<img
+										key={`Temperature ${plant.id}-${index}`}
+										src={image}
+										alt="Temperature"
+										title={`${range}`}
+										className="colpic"
+										width="50"
+									/>
+								);
+							})}
+						</div>
 						{selectedPlant && (
 							<div className="picdetails">
-								<h2>
+								<h2 id="titrecat">
 									Temperature range: <br />
 								</h2>
 								<p className="descpic">
@@ -330,71 +354,77 @@ const PlantList = ({ plant, index }: PlantListProps) => {
 							</div>
 						)}
 					</div>
-				</td>
-				<td className="images-column">
+				</div>
+				<div className="images-column">
 					<div className="image-group">
-						{getGrowthImage(plant.Growth)?.map((image, index) => (
-							<img
-								key={`Growth ${plant.id}-${index}`}
-								src={image}
-								alt={plant.Growth}
-								title={`${plant.Growth}`}
-								className="colpic"
-							/>
-						))}
+						<div className="picsdirection">
+							{getGrowthImage(plant.Growth)?.map((image, index) => (
+								<img
+									key={`Growth ${plant.id}-${index}`}
+									src={image}
+									alt={plant.Growth}
+									title={`${plant.Growth}`}
+									className="colpic"
+								/>
+							))}
+						</div>
 						{selectedPlant && (
 							<div className="picdetails">
-								<h2>
+								<h2 id="titrecat">
 									Growth: <br />
 								</h2>
 								<p className="descpic">{plant.Growth}</p>
 							</div>
 						)}
 					</div>
-				</td>
-				<td className="images-column">
+				</div>
+				<div className="images-column">
 					<div className="image-group">
-						{getPruningImage(plant.Pruning)?.map((image, index) => (
-							<img
-								key={`Pruning ${plant.id}-${index}`}
-								src={image}
-								alt={plant.Pruning}
-								title={`${plant.Pruning}`}
-								className="colpic"
-							/>
-						))}
+						<div className="picsdirection">
+							{getPruningImage(plant.Pruning)?.map((image, index) => (
+								<img
+									key={`Pruning ${plant.id}-${index}`}
+									src={image}
+									alt={plant.Pruning}
+									title={`${plant.Pruning}`}
+									className="colpic"
+								/>
+							))}
+						</div>
 						{selectedPlant && (
 							<div className="picdetails">
-								<h2>
+								<h2 id="titrecat">
 									Pruning: <br />
 								</h2>
 								<p className="descpic">{plant.Pruning}</p>
 							</div>
 						)}
 					</div>
-				</td>
-				<td className="images-column">
+				</div>
+				<div className="images-column">
 					<div className="image-group">
-						{getDifficultyImage(averageDifficulty)?.map((image, index) => (
-							<img
-								key={`Difficulty ${plant.id}-${index}`}
-								src={image}
-								alt="Difficulty"
-								title={`${averageDifficulty}`}
-								className="colpic"
-							/>
-						))}
+						<div className="picsdirection">
+							{getDifficultyImage(averageDifficulty)?.map((image, index) => (
+								<img
+									key={`Difficulty ${plant.id}-${index}`}
+									src={image}
+									alt="Difficulty"
+									title={`${averageDifficulty}`}
+									className="colpic"
+								/>
+							))}
+						</div>
 						{selectedPlant && (
 							<div className="picdetails">
-								<h2>
+								<h2 id="titrecat">
 									Difficulty: <br />
 								</h2>
 								<p className="descpic">{averageDifficulty}</p>
 							</div>
 						)}
 					</div>
-				</td>
-			</tr>
+				</div>
+			</div>
 
 			{/*petites résolutions */}
 			<div className="details-display">
